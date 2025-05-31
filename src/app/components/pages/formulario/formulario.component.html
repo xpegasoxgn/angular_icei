@@ -1,15 +1,16 @@
 <mat-card>
     <mat-card-title>Registar Nuevo Usuario</mat-card-title>
     <mat-card-content>
-        <form action="">
+        <form (ngSubmit)="guardar()" #form="ngForm">
             <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Nombre</mat-label>
-                <input matInput placeholder=" ej. juan perez">
+                <input matInput placeholder=" ej. juan perez" name="nombre" required>
             </mat-form-field>
             <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Correo</mat-label>
-                <input matInput placeholder="test">
+                <input matInput placeholder="test" name="correo" [(ngModel)]="correo" required>
             </mat-form-field>
+            <button mat-raised-button color="primary">Guardar</button>
         </form>
     </mat-card-content>
 </mat-card>

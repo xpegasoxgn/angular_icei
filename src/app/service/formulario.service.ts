@@ -6,4 +6,9 @@ import { Injectable } from '@angular/core';
 export class FormularioService {
 
   constructor() { }
+
+  guardarFormulario(data: any) {
+    console.log('formulario recibido', data);
+    alert('formulario simulado enviado correctamente');
+  }
 }
