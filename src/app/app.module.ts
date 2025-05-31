@@ -6,11 +6,16 @@ import { AppComponent } from './app.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
 import { HomeComponent } from './components/pages/home/home.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
 import { PerfilComponent } from './components/pages/perfil/perfil.component';
 import { TopBarComponent } from './components/layout/top-bar/top-bar.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { FormularioComponent } from './components/pages/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +24,17 @@ import { SidebarComponent } from './components/layout/sidebar/sidebar.component'
     MainLayoutComponent,
     PerfilComponent,
     TopBarComponent,
-    SidebarComponent
+    SidebarComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
