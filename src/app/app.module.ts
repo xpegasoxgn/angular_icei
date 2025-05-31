@@ -9,6 +9,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormField } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { HomeComponent } from './components/pages/home/home.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
@@ -34,7 +38,11 @@ import { FormularioComponent } from './components/pages/formulario/formulario.co
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    MatCardModule,
+    MatFormField,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
