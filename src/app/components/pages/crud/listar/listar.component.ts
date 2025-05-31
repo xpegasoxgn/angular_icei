@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Producto } from '../../../../models/producto.model';
+import { ProductoService } from '../../../../service/producto.service';
 
 @Component({
   selector: 'app-listar',
@@ -7,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './listar.component.css'
 })
 export class ListarComponent {
+  productos: Producto[] = []; 
+
+  displayedColumns: string[] = ['id', 'nombre', 'descripcion'];
+
+  constructor(private productoService: ProductoService) {}
+  ngOnInit(): void {
+    this.productoService.getproductos().subscribe((data: Producto[]) => {
+      this.productos = data;
+    });
+  }
+
 
 }
