@@ -14,6 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { HomeComponent } from './components/pages/home/home.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
@@ -21,6 +22,8 @@ import { PerfilComponent } from './components/pages/perfil/perfil.component';
 import { TopBarComponent } from './components/layout/top-bar/top-bar.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
 import { FormularioComponent } from './components/pages/formulario/formulario.component';
+import { ListarComponent } from './components/pages/crud/listar/listar.component';
+import { CrearComponent } from './components/pages/crud/crear/crear.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { FormularioComponent } from './components/pages/formulario/formulario.co
     PerfilComponent,
     TopBarComponent,
     SidebarComponent,
-    FormularioComponent
+    FormularioComponent,
+    ListarComponent,
+    CrearComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { FormularioComponent } from './components/pages/formulario/formulario.co
     MatCardModule,
     MatFormField,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

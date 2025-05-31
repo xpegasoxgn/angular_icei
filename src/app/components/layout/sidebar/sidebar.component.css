@@ -1,0 +1,7 @@
+mat-expansion-panel{
+    background: transparent;
+    box-shadow: none;
+    .mat-expansion-panel-header{
+    font-weight: bold;
+   }
+}
