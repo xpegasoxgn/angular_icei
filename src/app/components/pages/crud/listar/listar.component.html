@@ -1,1 +1,20 @@
-<p>listar works!</p>
+
+<h2>LISTAR PRODUCTOS</h2>
+<mat-table [dataSource]="productos" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *matCellDef="let producto"> {{producto.id}} </mat-cell>
+    </ng-container> 
+    <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef>nombre</mat-header-cell>
+        <mat-cell *matCellDef="let producto"> {{producto.nombre}} </mat-cell>
+    </ng-container> 
+    <ng-container matColumnDef="descripcion">
+        <mat-header-cell *matHeaderCellDef>descripcion</mat-header-cell>
+        <mat-cell *matCellDef="let producto"> {{producto.descripcion}} </mat-cell>
+    </ng-container> 
+
+    <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+    <mat-row *matRowDef="let ro; columns:displayedColumns"></mat-row>
+
+</mat-table>

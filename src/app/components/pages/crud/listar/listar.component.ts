@@ -15,8 +15,9 @@ export class ListarComponent {
 
   constructor(private productoService: ProductoService) {}
   ngOnInit(): void {
-    this.productoService.getproductos().subscribe((data: Producto[]) => {
+    this.productoService.getproductos().subscribe((data) => {
       this.productos = data;
+      console.log(this.productos);
     });
   }
 

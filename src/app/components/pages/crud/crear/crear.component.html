@@ -1,1 +1,17 @@
-<p>crear works!</p>
+<mat-card>
+    <mat-card-title>REGISTRAR UN PRODUCTO</mat-card-title>
+    <mat-card-content>
+        <form (ngSubmit)="guardarProducto()" #form="ngForm">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder=" producto nombre" name="nombre" [(ngModel)]="Producto.nombre" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>descripcion</mat-label>
+                <input matInput placeholder="producto descripcion" name="correo" [(ngModel)]="Producto.descripcion" required>
+            </mat-form-field>
+            <button mat-raised-button color="primary">Guardar</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+
