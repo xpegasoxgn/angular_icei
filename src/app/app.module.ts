@@ -1,16 +1,67 @@
+//angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+//material
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
+
+
+//componentes 
+import { HomeComponent } from './components/pages/home/home.component';
+import { PerfilComponent } from './components/pages/perfil/perfil.component';
+import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
+import { TopBarComponent } from './components/layout/top-bar/top-bar.component';
+import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { FormularioComponent } from './components/pages/formulario/formulario.component';
+import { ListarComponent } from './components/pages/crud/listar/listar.component';
+import { CrearComponent } from './components/pages/crud/crear/crear.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    PerfilComponent,
+    MainLayoutComponent,
+    TopBarComponent,
+    SidebarComponent,
+    FormularioComponent,
+    ListarComponent,
+    CrearComponent,
+   
   ],
   imports: [
+    FormsModule,
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatMenuModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
