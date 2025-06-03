@@ -17,4 +17,7 @@ export class ProductoService {
   crear(producto:Producto):Observable<Producto>{
     return this.http.post<Producto>(this.url,producto);
   }
+  actualizar(id:number ,producto:Producto):Observable<Producto>{
+    return this.http.patch<Producto>(this.url+'/'+id,producto);
+  }
 }

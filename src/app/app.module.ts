@@ -26,6 +26,7 @@ import { SidebarComponent } from './components/layout/sidebar/sidebar.component'
 import { FormularioComponent } from './components/pages/formulario/formulario.component';
 import { ListarComponent } from './components/pages/crud/listar/listar.component';
 import { CrearComponent } from './components/pages/crud/crear/crear.component';
+import { EditarProductoComponent } from './components/pages/crud/listar/editar-producto/editar-producto.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CrearComponent } from './components/pages/crud/crear/crear.component';
     SidebarComponent,
     FormularioComponent,
     ListarComponent,
-    CrearComponent
+    CrearComponent,
+    EditarProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,7 @@ import { CrearComponent } from './components/pages/crud/crear/crear.component';
     MatInputModule,
     FormsModule,
     MatExpansionModule,
-    MatTableModule
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

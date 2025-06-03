@@ -13,6 +13,14 @@
         <mat-header-cell *matHeaderCellDef>descripcion</mat-header-cell>
         <mat-cell *matCellDef="let producto"> {{producto.descripcion}} </mat-cell>
     </ng-container> 
+    <ng-container matColumnDef="acciones">
+        <mat-header-cell *matHeaderCellDef>acciones</mat-header-cell>
+            <mat-cell *matCellDef="let producto">
+                <button mat-icon-button color="primary" (click)="abrirModalEditar(producto)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </mat-cell>
+    </ng-container> 
 
     <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
     <mat-row *matRowDef="let ro; columns:displayedColumns"></mat-row>
