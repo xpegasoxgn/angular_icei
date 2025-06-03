@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 //material
@@ -20,8 +20,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
-
-
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 //componentes 
 import { HomeComponent } from './components/pages/home/home.component';
 import { PerfilComponent } from './components/pages/perfil/perfil.component';
@@ -31,6 +31,7 @@ import { SidebarComponent } from './components/layout/sidebar/sidebar.component'
 import { FormularioComponent } from './components/pages/formulario/formulario.component';
 import { ListarComponent } from './components/pages/crud/listar/listar.component';
 import { CrearComponent } from './components/pages/crud/crear/crear.component';
+import { EditarProductoComponent } from './components/pages/crud/listar/editar-producto/editar-producto.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CrearComponent } from './components/pages/crud/crear/crear.component';
     FormularioComponent,
     ListarComponent,
     CrearComponent,
+    EditarProductoComponent,
    
   ],
   imports: [
@@ -61,7 +63,11 @@ import { CrearComponent } from './components/pages/crud/crear/crear.component';
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
-    MatTableModule
+    MatSnackBarModule,
+    MatTableModule,
+    //BrowserAnimationsModule,
+   // MatDialog
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

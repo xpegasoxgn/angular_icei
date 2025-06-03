@@ -1,7 +1,9 @@
 import { Component,OnInit } from '@angular/core';
 import { ProductoService } from '../../../../service/producto.service';
 import { Producto } from '../../../../models/produco.model';
-
+//import { MatDialog } from '@angular/material/dialog';
+import { EditarProductoComponent } from './editar-producto/editar-producto.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-listar',
   standalone: false,
@@ -11,10 +13,10 @@ import { Producto } from '../../../../models/produco.model';
 export class ListarComponent {
   productos:Producto[]=[];
 
-  displayedColumns: string []=['id','nombre','descripcion']
+  displayedColumns: string []=['id','nombre','descripcion','acciones']
 
 
-  constructor(private productoService:ProductoService){}
+  constructor(private productoService:ProductoService, public dialog: MatDialog){}
 
   ngOnInit(){
     console.log('entrar al metodo ')
@@ -26,4 +28,11 @@ export class ListarComponent {
 
   }
 
+  abrirModalEditar(producto: Producto){
+    this.dialog.open( EditarProductoComponent,{
+      width:'400px',
+      data: producto,// le vamos a mandar data  la data producto
+    });
+
+  }
 }
