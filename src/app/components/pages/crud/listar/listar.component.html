@@ -19,6 +19,9 @@
                 <button mat-icon-button color="primary" (click)="abrirModalEditar(producto)">
                     <mat-icon>edit</mat-icon>
                 </button>
+                <button mat-icon-button color="warn" (click)="abrirDialogEliminar(producto.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </mat-cell>
     </ng-container> 
 
@@ -26,3 +29,21 @@
     <mat-row *matRowDef="let ro; columns:displayedColumns"></mat-row>
 
 </mat-table>
+
+<ng-template #confirmDialog>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Eliminar Producto?
+            </mat-card-title>
+            <mat-card-content>
+                <button mat-button color="warn" (click)="confirmarEliminar()">
+                    Eliminar
+                </button>
+                <button mat-button color="primary" (click)="cancelarEliminar()">
+                    Cancelar
+                </button>
+            </mat-card-content>
+        </mat-card-header>
+    </mat-card>
+</ng-template>

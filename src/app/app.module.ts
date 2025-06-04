@@ -17,6 +17,7 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { HomeComponent } from './components/pages/home/home.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
@@ -57,6 +58,7 @@ import { EditarProductoComponent } from './components/pages/crud/listar/editar-p
     FormsModule,
     MatExpansionModule,
     MatTableModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

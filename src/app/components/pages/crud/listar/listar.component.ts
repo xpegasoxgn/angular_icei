@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild, TemplateRef} from '@angular/core';
 import { Producto } from '../../../../models/producto.model';
 import { ProductoService } from '../../../../service/producto.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditarProductoComponent } from './editar-producto/editar-producto.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-listar',
@@ -12,10 +13,12 @@ import { EditarProductoComponent } from './editar-producto/editar-producto.compo
 })
 export class ListarComponent {
   productos: Producto[] = []; 
+  productoEliminar:number | null = null;
+
 
   displayedColumns: string[] = ['id', 'nombre', 'descripcion','acciones'];
-
-  constructor(private productoService: ProductoService, private dialog:MatDialog) {}
+  @ViewChild('confirmDialog') confirmDialogTemplate!: TemplateRef<any>;
+  constructor(private productoService: ProductoService, private dialog:MatDialog, private snackBar:MatSnackBar) {}
   ngOnInit(): void {
     this.productoService.getproductos().subscribe((data) => {
       this.productos = data;
@@ -23,13 +26,40 @@ export class ListarComponent {
     });
   }
 
+  confirmarEliminar(){
+    if(this.productoEliminar!=null){
+      this.productoService.eliminar(this.productoEliminar).subscribe( {
+        next: () => {
+          this.snackBar.open('Producto eliminado', 'Cerrar', {
+            duration: 3000,
+          });
+          this.dialog.closeAll();
+        },
 
+        error: () => {
+          this.snackBar.open('Error al eliminar el producto', 'Cerrar', {
+            duration: 3000,
+          });
+          this.dialog.closeAll();
+        }
+      })
+    }
+  }
+  cancelarEliminar(){
+    this.productoEliminar = null;
+    this.dialog.closeAll();
+  }
   abrirModalEditar(producto: Producto){
     this.dialog.open(EditarProductoComponent, {
       width: '400px',
       data: producto,
     })
   }
+  abrirDialogEliminar(id:number){
+    this.productoEliminar=id;
+    this.dialog.open(this.confirmDialogTemplate)
+  }
+
 
 
 }
