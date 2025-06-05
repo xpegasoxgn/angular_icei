@@ -4,6 +4,7 @@ import { ProductoService } from '../../../../service/producto.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditarProductoComponent } from './editar-producto/editar-producto.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DetalleProductoComponent } from '../detalle-producto/detalle-producto.component';
 
 @Component({
   selector: 'app-listar',
@@ -59,7 +60,12 @@ export class ListarComponent {
     this.productoEliminar=id;
     this.dialog.open(this.confirmDialogTemplate)
   }
-
+  abrirModalDetalle(producto: Producto):void{
+    this.dialog.open(DetalleProductoComponent, {
+      width: '400px',
+      data: producto,
+    })
+  }
 
 
 }
