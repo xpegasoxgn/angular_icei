@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title>Registar Nuevo Usuario</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="formulario" (ngSubmit)="guardar()">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="producto"   formControlName="nombre">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Correo</mat-label>
+                <input matInput placeholder="test" formControlName="descripcion">
+            </mat-form-field>
+            <button mat-raised-button color="primary">Guardar</button>
+        </form>
+    </mat-card-content>
+</mat-card>

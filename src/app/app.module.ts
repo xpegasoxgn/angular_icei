@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { FormularioComponent } from './components/pages/formulario/formulario.co
 import { ListarComponent } from './components/pages/crud/listar/listar.component';
 import { CrearComponent } from './components/pages/crud/crear/crear.component';
 import { EditarProductoComponent } from './components/pages/crud/listar/editar-producto/editar-producto.component';
+import { FormularioReactivoComponent } from './components/pages/crud/formulario-reactivo/formulario-reactivo.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { EditarProductoComponent } from './components/pages/crud/listar/editar-p
     FormularioComponent,
     ListarComponent,
     CrearComponent,
-    EditarProductoComponent
+    EditarProductoComponent,
+    FormularioReactivoComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { EditarProductoComponent } from './components/pages/crud/listar/editar-p
     FormsModule,
     MatExpansionModule,
     MatTableModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
