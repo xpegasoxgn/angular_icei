@@ -1,9 +1,10 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ProductoService } from '../../../../service/producto.service';
 import { Producto } from '../../../../models/produco.model';
 //import { MatDialog } from '@angular/material/dialog';
 import { EditarProductoComponent } from './editar-producto/editar-producto.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-listar',
   standalone: false,
@@ -12,11 +13,12 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ListarComponent {
   productos:Producto[]=[];
-
+  productoEliminar:number | null=null;
   displayedColumns: string []=['id','nombre','descripcion','acciones']
 
-
-  constructor(private productoService:ProductoService, public dialog: MatDialog){}
+  @ViewChild('confirmDialog') confirmDialogTemplate!: TemplateRef<any>;
+  
+  constructor(private productoService:ProductoService, public dialog: MatDialog, private snackBar:MatSnackBar){}
 
   ngOnInit(){
     console.log('entrar al metodo ')
@@ -35,4 +37,46 @@ export class ListarComponent {
     });
 
   }
+  
+  abrirDialogEliminar(id:number){
+    this.productoEliminar=id;
+    this.dialog.open(this.confirmDialogTemplate)
+  }
+  
+  confirmarEliminar(){
+     if(this.productoEliminar!=null){
+      this.productoService.eliminar(this.productoEliminar).subscribe({
+        next:()=>{
+          this.snackBar.open('Producto eliminado', 'cerrar', {duration:3000})
+          this.dialog.closeAll();
+        },
+        error:()=>{
+          this.snackBar.open('Error al eliminar el producot', 'cerrar', {duration:3000})
+          this.dialog.closeAll();
+        }
+        
+      });
+    }
+  }
+  cancelarEliminacion(){
+    this.productoEliminar=null;
+    this.dialog.closeAll();
+  }
+  confirmarEliminacion(id:number){
+   
+    const confirmado= confirm('Esta seguro de eliminar este producto?');
+    if(confirmado){
+      this.productoService.eliminar(id).subscribe({
+        next:()=>{
+          this.snackBar.open('Producto eliminado', 'cerrar', {duration:3000})
+        },
+        error:()=>{
+           this.snackBar.open('Error al eliminar el producot', 'cerrar', {duration:3000})
+        }
+        
+      });
+    }
+
+  }
+
 }

@@ -23,4 +23,8 @@ export class ProductoService {
   actualizar(id:number, producto: Producto):Observable<Producto>{
     return this.http.patch<Producto>(this.url+'/'+id, producto);
   }
+
+   eliminar(id:number):Observable<any>{
+    return this.http.delete(this.url+'/'+id);
+  }
 }

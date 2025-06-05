@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductoService } from '../../../../service/producto.service';
 import { Producto } from '../../../../models/produco.model';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear',
@@ -14,6 +15,7 @@ export class CrearComponent {
     nombre:'',
     descripcion:''
   };
+
   constructor(private productoService:ProductoService){}
 
 

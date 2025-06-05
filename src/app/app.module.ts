@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -32,6 +34,7 @@ import { FormularioComponent } from './components/pages/formulario/formulario.co
 import { ListarComponent } from './components/pages/crud/listar/listar.component';
 import { CrearComponent } from './components/pages/crud/crear/crear.component';
 import { EditarProductoComponent } from './components/pages/crud/listar/editar-producto/editar-producto.component';
+import { FormularioReactivoComponent } from './components/pages/crud/formulario-reactivo/formulario-reactivo.component';
 
 @NgModule({
   declarations: [
@@ -45,10 +48,12 @@ import { EditarProductoComponent } from './components/pages/crud/listar/editar-p
     ListarComponent,
     CrearComponent,
     EditarProductoComponent,
+    FormularioReactivoComponent,
    
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
