@@ -5,6 +5,8 @@ import { Producto } from '../../../../models/produco.model';
 import { EditarProductoComponent } from './editar-producto/editar-producto.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DetalleProductoComponent } from '../detalle-producto/detalle-producto.component';
+
 @Component({
   selector: 'app-listar',
   standalone: false,
@@ -76,6 +78,16 @@ export class ListarComponent {
         
       });
     }
+
+  }
+
+
+  
+  abrirModalDetalle(producto: Producto):void{
+    this.dialog.open( DetalleProductoComponent,{
+      width:'400px',
+      data: producto,// le vamos a mandar data  la data producto
+    });
 
   }
 

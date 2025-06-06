@@ -35,6 +35,7 @@ import { ListarComponent } from './components/pages/crud/listar/listar.component
 import { CrearComponent } from './components/pages/crud/crear/crear.component';
 import { EditarProductoComponent } from './components/pages/crud/listar/editar-producto/editar-producto.component';
 import { FormularioReactivoComponent } from './components/pages/crud/formulario-reactivo/formulario-reactivo.component';
+import { DetalleProductoComponent } from './components/pages/crud/detalle-producto/detalle-producto.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { FormularioReactivoComponent } from './components/pages/crud/formulario-
     CrearComponent,
     EditarProductoComponent,
     FormularioReactivoComponent,
+    DetalleProductoComponent,
    
   ],
   imports: [

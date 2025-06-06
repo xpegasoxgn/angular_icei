@@ -30,7 +30,7 @@ export class EditarProductoComponent {
         this.productoService.actualizar(this.producto.id!, this.producto).subscribe({
           next:()=>{
            this.snackBar.open('Producto actualizado correctamente', 'cerrar',{
-            duration:3000,
+            duration:5000,
             panelClass:['snackbar-success']
            })
             this.dialoRef.close();

@@ -24,7 +24,14 @@ export class ProductoService {
     return this.http.patch<Producto>(this.url+'/'+id, producto);
   }
 
-   eliminar(id:number):Observable<any>{
+  eliminar(id:number):Observable<any>{
     return this.http.delete(this.url+'/'+id);
   }
+
+  getById(id:number):Observable<Producto>{
+    return this.http.get<Producto>(this.url+'/'+id);
+
+  }
+
+
 }
