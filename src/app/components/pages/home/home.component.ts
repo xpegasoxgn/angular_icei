@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router  } from '@angular/router';
+import { logout as loginGuard } from '../../../guards/auth.guard';
+
 
 @Component({
   selector: 'app-home',
@@ -8,4 +11,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  constructor(private router:Router){}
+
+  logout(){
+    loginGuard();
+    this.router.navigate(['/login']);
+  }
 }
