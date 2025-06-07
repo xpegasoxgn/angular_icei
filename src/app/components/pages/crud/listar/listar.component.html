@@ -44,7 +44,8 @@
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let ro; columns:displayedColumns;"></mat-row>
-    
+
+   
 </mat-table>
 
 
@@ -61,3 +62,10 @@
 
 
 </ng-template>
+<mat-card>
+    <button mat-button (click)="abrirModalNuevoProducto()">Registrear Producto</button>
+</mat-card>
+<mat-card>
+    <button mat-button (click)="logout()">Cerrar session</button>
+
+</mat-card>

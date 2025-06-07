@@ -16,5 +16,7 @@ export class LoginComponent {
     console.log('entra al metodo');
     loginGuard();
     this.router.navigate(['/home']);
+    this.router.navigate(['/crud/listar']);
   }
 }
+

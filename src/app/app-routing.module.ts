@@ -21,7 +21,7 @@ const routes: Routes = [
   { path:'home', component:HomeComponent , canActivate:[authGuard]},
   { path:'perfil', component:PerfilComponent , canActivate:[authGuard]},
   { path:'formulario', component:FormularioComponent},
-  { path:'crud/listar', component:ListarComponent},
+  { path:'crud/listar', component:ListarComponent, canActivate:[authGuard]},
   { path:'crud/crear', component:CrearComponent},
   { path:'crud/reactivo', component:FormularioReactivoComponent},
   { path: 'rxjs', component: RxjsEjemploComponent },

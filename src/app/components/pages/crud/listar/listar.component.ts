@@ -6,6 +6,10 @@ import { EditarProductoComponent } from './editar-producto/editar-producto.compo
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DetalleProductoComponent } from '../detalle-producto/detalle-producto.component';
+import { Router } from '@angular/router';
+import { logout as loginGuard } from '../../../../guards/auth.guard';
+import { CrearProductoComponent } from './crear-producto/crear-producto.component';
+
 
 @Component({
   selector: 'app-listar',
@@ -20,14 +24,24 @@ export class ListarComponent {
 
   @ViewChild('confirmDialog') confirmDialogTemplate!: TemplateRef<any>;
   
-  constructor(private productoService:ProductoService, public dialog: MatDialog, private snackBar:MatSnackBar){}
-
+  constructor(private productoService:ProductoService, public dialog: MatDialog, private snackBar:MatSnackBar, private router:Router){}
+  logout(){
+    loginGuard();
+    this.router.navigate(['/login']);
+  }
   ngOnInit(){
     console.log('entrar al metodo ')
     this.productoService.getProductos().subscribe(data=>{
       this.productos= data;
       console.log(this.productos)
         
+    });
+
+  }
+  abrirModalNuevoProducto(producto?: Producto):void{
+    this.dialog.open( CrearProductoComponent,{
+      width:'400px',
+      data: producto,// le vamos a mandar data  la data producto
     });
 
   }
