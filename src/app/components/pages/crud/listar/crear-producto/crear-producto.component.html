@@ -1,0 +1,24 @@
+<div class="form-container">
+    <mat-card>
+      <mat-card-title>Crear Producto</mat-card-title>
+      <mat-card-content>
+        <form (ngSubmit)="guardar()" #form="ngForm">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Producto nombre" name="nombre" [(ngModel)]="producto.nombre" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Descripción</mat-label>
+            <input matInput placeholder="Producto descripción" name="descripcion" [(ngModel)]="producto.descripcion" required>
+          </mat-form-field>
+  
+          <div class="modal-actions">
+            <button mat-raised-button color="primary" type="submit">Guardar</button>
+            <button mat-raised-button color="warn" type="button" (click)="close()">Cancelar</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

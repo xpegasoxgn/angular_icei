@@ -5,6 +5,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditarProductoComponent } from './editar-producto/editar-producto.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DetalleProductoComponent } from '../detalle-producto/detalle-producto.component';
+import { CrearProductoComponent } from './crear-producto/crear-producto.component';
+import { Router } from '@angular/router';
+import { logout as  loginGuard} from '../../../../guards/auth.guard';
 
 @Component({
   selector: 'app-listar',
@@ -19,7 +22,7 @@ export class ListarComponent {
 
   displayedColumns: string[] = ['id', 'nombre', 'descripcion','acciones'];
   @ViewChild('confirmDialog') confirmDialogTemplate!: TemplateRef<any>;
-  constructor(private productoService: ProductoService, private dialog:MatDialog, private snackBar:MatSnackBar) {}
+  constructor(private productoService: ProductoService, private dialog:MatDialog, private snackBar:MatSnackBar,private router: Router) {}
   ngOnInit(): void {
     this.productoService.getproductos().subscribe((data) => {
       this.productos = data;
@@ -65,6 +68,15 @@ export class ListarComponent {
       width: '400px',
       data: producto,
     })
+  }
+  abrirModalAgregarProducto(){
+    this.dialog.open(CrearProductoComponent, {
+      width: '400px',
+    })
+  }
+  logout() {
+    loginGuard();
+    this.router.navigate(['/login']);
   }
 
 

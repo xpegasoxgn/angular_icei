@@ -32,6 +32,8 @@ import { EditarProductoComponent } from './components/pages/crud/listar/editar-p
 import { FormularioReactivoComponent } from './components/pages/crud/formulario-reactivo/formulario-reactivo.component';
 import { DetalleProductoComponent } from './components/pages/crud/detalle-producto/detalle-producto.component';
 import { RxjsEjemploComponent } from './components/pages/rxjs-ejemplo/rxjs-ejemplo.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { CrearProductoComponent } from './components/pages/crud/listar/crear-producto/crear-producto.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { RxjsEjemploComponent } from './components/pages/rxjs-ejemplo/rxjs-ejemp
     EditarProductoComponent,
     FormularioReactivoComponent,
     DetalleProductoComponent,
-    RxjsEjemploComponent
+    RxjsEjemploComponent,
+    LoginComponent,
+    CrearProductoComponent
   ],
   imports: [
     BrowserModule,

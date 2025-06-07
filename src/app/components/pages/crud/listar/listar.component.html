@@ -1,5 +1,14 @@
 
 <h2>LISTAR PRODUCTOS</h2>
+<button mat-raised-button color="primary"(click)="abrirModalAgregarProducto()">
+  <mat-icon aria-hidden="true">add</mat-icon>
+  <span>Agregar</span>
+</button>
+<button mat-raised-button color="warn" (click)="logout()">
+    <mat-icon aria-hidden="true">logout</mat-icon>
+    <span>Cerrar sesión</span>
+  </button>
+
 <mat-table [dataSource]="productos" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
         <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
