@@ -1,0 +1,53 @@
+
+<button mat-button (click)="addProductoModal()">
+  Agregar Producto
+</button>
+
+<button mat-button (click)="logout()">
+  Logout
+</button>
+
+<mat-table [dataSource]="productos" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let el"> {{ el.id }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+    <mat-cell *matCellDef="let el"> {{ el.nombre }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="descripcion">
+    <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+    <mat-cell *matCellDef="let el"> {{ el.descripcion }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+    <mat-cell *matCellDef="let el">
+
+      <button mat-raised-button color="primary" 
+        (click)="editarProducto()">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-raised-button color="primary"
+        (click)="eliminarProducto()">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <button mat-raised-button color="primary"
+        (click)="verProducto(el)">
+        <mat-icon>visibility</mat-icon>
+      </button>
+
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>
+

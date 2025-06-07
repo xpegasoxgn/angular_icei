@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "clase-angular19": {
+    "angular-03": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/clase-angular19",
+            "outputPath": "dist/angular-03",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -37,7 +37,7 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
+              "@angular/material/prebuilt-themes/rose-red.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "clase-angular19:build:production"
+              "buildTarget": "angular-03:build:production"
             },
             "development": {
-              "buildTarget": "clase-angular19:build:development"
+              "buildTarget": "angular-03:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -96,7 +96,7 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
+              "@angular/material/prebuilt-themes/rose-red.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -106,6 +106,6 @@
     }
   },
   "cli": {
-    "analytics": "93461654-2835-40d2-b837-b2eca5fa069e"
+    "analytics": "5f6a56d7-f406-46cf-96c6-52b1be705ce0"
   }
 }

@@ -4,8 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  host: {'ngSkipHydratation':'true'}
 })
 export class AppComponent {
-  title = 'clase-angular19';
+  title = 'angular-03';
 }

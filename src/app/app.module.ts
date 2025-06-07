@@ -1,80 +1,77 @@
-//angular
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
 
-//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-//material
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
+import{ MatToolbarModule } from "@angular/material/toolbar";
+import{ MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule, MatNavList } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatTableModule } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
+import { MatTable, MatTableModule } from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-//componentes 
-import { HomeComponent } from './components/pages/home/home.component';
+
 import { PerfilComponent } from './components/pages/perfil/perfil.component';
-import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
-import { TopBarComponent } from './components/layout/top-bar/top-bar.component';
-import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { MainLayoutComponent } from './components/pages/main-layout/main-layout.component';
+import { TopBarComponent } from './components/pages/top-bar/top-bar.component';
+import { SideBarComponent } from './components/pages/side-bar/side-bar.component';
 import { FormularioComponent } from './components/pages/formulario/formulario.component';
-import { ListarComponent } from './components/pages/crud/listar/listar.component';
-import { CrearComponent } from './components/pages/crud/crear/crear.component';
-import { EditarProductoComponent } from './components/pages/crud/listar/editar-producto/editar-producto.component';
-import { FormularioReactivoComponent } from './components/pages/crud/formulario-reactivo/formulario-reactivo.component';
+import { ListarComponent } from './components/crud/listar/listar.component';
+import { CrearComponent } from './components/crud/crear/crear.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormReactivoComponent } from './components/form-reactivo/form-reactivo.component';
+import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
+import { RxJsEjemploComponent } from './components/pages/rx-js-ejemplo/rx-js-ejemplo.component';
+import { LoginComponent } from './components/login/login.component';
+import { AddProductModalComponent } from './components/add-product-modal/add-product-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     PerfilComponent,
+    HomeComponent,
     MainLayoutComponent,
     TopBarComponent,
-    SidebarComponent,
+    SideBarComponent,
     FormularioComponent,
     ListarComponent,
     CrearComponent,
-    EditarProductoComponent,
-    FormularioReactivoComponent,
-   
+    FormReactivoComponent,
+    DetalleProductoComponent,
+    RxJsEjemploComponent,
+    LoginComponent,
+    AddProductModalComponent
   ],
   imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    //
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
     MatIconModule,
-    MatMenuModule,
+    MatSidenavModule,
+    MatNavList,
+    MatListModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
     MatExpansionModule,
-    MatSnackBarModule,
+    HttpClientModule,
     MatTableModule,
-    //BrowserAnimationsModule,
-   // MatDialog
-  
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    provideClientHydration(withEventReplay())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

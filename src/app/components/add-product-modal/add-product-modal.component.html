@@ -1,18 +1,18 @@
 <mat-card>
-    <mat-card-title>Titulo</mat-card-title>
+    <mat-card-title>Crear producto</mat-card-title>
     <mat-card-content>
         <form #form="ngForm" (ngSubmit)="guardar()">
 
             <mat-form-field appearence="fill">
                 <mat-label>Nombre</mat-label>
-                <input [(ngModel)]="nombre" name="nombre" matInput placeholder="Ej">
+                <input [(ngModel)]="nombre" name="nombre" matInput placeholder="Ingresa nombre">
             </mat-form-field>
 
             <br>
 
             <mat-form-field appearence="fill">
-                <mat-label>Nombre</mat-label>
-                <input [(ngModel)]="correo" name="correo"  matInput placeholder="Ej">
+                <mat-label>Descripcion</mat-label>
+                <input [(ngModel)]="descripcion" name="descripcion" matInput placeholder="Ingresa descripcion">
             </mat-form-field>
 
             <br>
@@ -22,3 +22,4 @@
         </form>
     </mat-card-content>
 </mat-card>
+
