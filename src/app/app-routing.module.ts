@@ -7,14 +7,14 @@ import { FormularioComponent } from './components/pages/formulario/formulario.co
 import { ListarComponent } from './components/pages/crud/listar/listar.component';
 import { CrearComponent } from './components/pages/crud/crear/crear.component';
 import { FormularioReactivoComponent } from './components/pages/crud/formulario-reactivo/formulario-reactivo.component';
-<<<<<<< Updated upstream
 
-
-=======
 import { RxjsEjemploComponent } from './components/pages/rxjs-ejemplo/rxjs-ejemplo.component';
 import { authGuard } from './guards/auth.guard';
 import { LoginComponent } from './components/pages/login/login.component';
->>>>>>> Stashed changes
+
+
+
+
 
 const routes: Routes = [
   { path:'', redirectTo:'home', pathMatch:'full'}, //principal
@@ -24,11 +24,7 @@ const routes: Routes = [
   { path:'crud/listar', component:ListarComponent},
   { path:'crud/crear', component:CrearComponent},
   { path:'crud/reactivo', component:FormularioReactivoComponent},
-<<<<<<< Updated upstream
-=======
-  { path:'rxjs', component:RxjsEjemploComponent},
-  { path:'login', component:LoginComponent }
->>>>>>> Stashed changes
+  
 ];
 
 @NgModule({

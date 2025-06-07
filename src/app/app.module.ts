@@ -36,11 +36,10 @@ import { CrearComponent } from './components/pages/crud/crear/crear.component';
 import { EditarProductoComponent } from './components/pages/crud/listar/editar-producto/editar-producto.component';
 import { FormularioReactivoComponent } from './components/pages/crud/formulario-reactivo/formulario-reactivo.component';
 import { DetalleProductoComponent } from './components/pages/crud/detalle-producto/detalle-producto.component';
-<<<<<<< Updated upstream
-=======
+
 import { RxjsEjemploComponent } from './components/pages/rxjs-ejemplo/rxjs-ejemplo.component';
 import { LoginComponent } from './components/pages/login/login.component';
->>>>>>> Stashed changes
+
 
 @NgModule({
   declarations: [
@@ -56,11 +55,8 @@ import { LoginComponent } from './components/pages/login/login.component';
     EditarProductoComponent,
     FormularioReactivoComponent,
     DetalleProductoComponent,
-<<<<<<< Updated upstream
-=======
     RxjsEjemploComponent,
     LoginComponent,
->>>>>>> Stashed changes
    
   ],
   imports: [
