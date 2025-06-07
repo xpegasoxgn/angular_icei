@@ -24,6 +24,8 @@ const routes: Routes = [
   { path:'crud/listar', component:ListarComponent},
   { path:'crud/crear', component:CrearComponent},
   { path:'crud/reactivo', component:FormularioReactivoComponent},
+  { path: 'rxjs', component: RxjsEjemploComponent },
+  {path:'login', component:LoginComponent}
   
 ];
 
