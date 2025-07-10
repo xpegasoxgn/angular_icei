@@ -30,7 +30,8 @@ export class ProductoService {
 
   getById(id:number):Observable<Producto>{
     return this.http.get<Producto>(this.url+'/'+id);
-
   }
+
+  //comentario
 
 }
