@@ -9,6 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// interceptors
+
+import { provideHttpClient,withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './auth.interceptor';
 
 //material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -36,9 +40,19 @@ import { CrearComponent } from './components/pages/crud/crear/crear.component';
 import { EditarProductoComponent } from './components/pages/crud/listar/editar-producto/editar-producto.component';
 import { FormularioReactivoComponent } from './components/pages/crud/formulario-reactivo/formulario-reactivo.component';
 import { DetalleProductoComponent } from './components/pages/crud/detalle-producto/detalle-producto.component';
-
+import { ListarPacientesComponent } from './components/pages/pacientes/listar-pacientes/listar-pacientes.component';
 import { RxjsEjemploComponent } from './components/pages/rxjs-ejemplo/rxjs-ejemplo.component';
 import { LoginComponent } from './components/pages/login/login.component';
+//prime 
+import Aura from '@primeng/themes/aura';  // Importa el preset "Aura"
+import { providePrimeNG } from 'primeng/config';
+
+import { TableModule } from 'primeng/table';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { TooltipModule } from 'primeng/tooltip';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @NgModule({
@@ -57,9 +71,12 @@ import { LoginComponent } from './components/pages/login/login.component';
     DetalleProductoComponent,
     RxjsEjemploComponent,
     LoginComponent,
+    ListarPacientesComponent
    
   ],
   imports: [
+    BrowserAnimationsModule,
+
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -80,9 +97,22 @@ import { LoginComponent } from './components/pages/login/login.component';
     MatTableModule,
     //BrowserAnimationsModule,
    // MatDialog
+
+    TableModule,
+    ButtonModule,
+    CardModule,
+    TooltipModule
   
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(withInterceptors([authInterceptor])),
+     providePrimeNG({
+      theme: { preset: Aura }
+    })
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,11 +6,22 @@ let isLoggedIn=false;
 
 export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
-  if(isLoggedIn){
-    return true; //dejar pasar
-  }
+  //if(isLoggedIn){
+   // return true; //dejar pasar
+  //}
   //si noesta logueado redirige a login 
-  return router.parseUrl('/login');
+  //return router.parseUrl('/login');
+  console.log('metodo de tokens');
+  const token=localStorage.getItem('token');
+
+  console.log('metodo de tokens el token', token );
+  if(token){
+    return true;
+  }
+  
+  window.location.href='http://localhost:4200';
+  return false;
+
 };
 
 export function login(){

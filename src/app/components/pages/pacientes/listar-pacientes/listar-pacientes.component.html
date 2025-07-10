@@ -1,0 +1,48 @@
+<p-card header="Lista de Pacientes" styleClass="shadow-3">
+  <div class="p-input-icon-left mb-3">
+    <i class="pi pi-search"></i>
+    <input
+      type="text"
+      pInputText
+      placeholder="Buscar..."
+      [(ngModel)]="globalFilter"
+      (input)="dt.filterGlobal(globalFilter, 'contains')"
+    />
+  </div>
+
+  <p-table
+    #dt
+    [value]="pacientes"
+    [paginator]="true"
+    [rows]="10"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    [responsiveLayout]="'scroll'"
+    [loading]="loading"
+    [globalFilterFields]="['id', 'nombre', 'apellido', 'ci', 'fecha_nacimiento', 'sexo', 'direccion', 'telefono']"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>CI</th>
+        <th>Fecha Nacimiento</th>
+        <th>Sexo</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-paciente>
+      <tr>
+        <td>{{ paciente.id }}</td>
+        <td>{{ paciente.nombre }}</td>
+        <td>{{ paciente.apellido }}</td>
+        <td>{{ paciente.ci }}</td>
+        <td>{{ paciente.fecha_nacimiento }}</td>
+        <td>{{ paciente.sexo }}</td>
+        <td>{{ paciente.direccion }}</td>
+        <td>{{ paciente.telefono }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

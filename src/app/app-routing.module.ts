@@ -7,6 +7,8 @@ import { FormularioComponent } from './components/pages/formulario/formulario.co
 import { ListarComponent } from './components/pages/crud/listar/listar.component';
 import { CrearComponent } from './components/pages/crud/crear/crear.component';
 import { FormularioReactivoComponent } from './components/pages/crud/formulario-reactivo/formulario-reactivo.component';
+import { ListarPacientesComponent } from './components/pages/pacientes/listar-pacientes/listar-pacientes.component';
+
 
 import { RxjsEjemploComponent } from './components/pages/rxjs-ejemplo/rxjs-ejemplo.component';
 import { authGuard } from './guards/auth.guard';
@@ -24,8 +26,9 @@ const routes: Routes = [
   { path:'crud/listar', component:ListarComponent},
   { path:'crud/crear', component:CrearComponent},
   { path:'crud/reactivo', component:FormularioReactivoComponent},
+  { path:'pacientes/listar', component:ListarPacientesComponent},
   { path: 'rxjs', component: RxjsEjemploComponent },
-  {path:'login', component:LoginComponent}
+ // {path:'login', component:LoginComponent}
   
 ];
 
